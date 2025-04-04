@@ -5,15 +5,12 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertiesLoader {
-
     public final Properties properties = getResource();
     public final String baseUrl = properties.getProperty("base-url");
     public final String username = properties.getProperty("username");
     public final String password = properties.getProperty("password");
     public final String userEmail = properties.getProperty("userEmail");
     public final String userPassword = properties.getProperty("userPassword");
-
-
 
     private Properties getResource() {
         try {

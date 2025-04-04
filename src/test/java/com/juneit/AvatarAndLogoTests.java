@@ -1,7 +1,6 @@
 package com.juneit;
 
 import com.juneit.Pages.*;
-import io.opentelemetry.context.Scope;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,8 +40,6 @@ public class AvatarAndLogoTests {
     public void assertDefaultAvatarInUserProfile() throws IOException, URISyntaxException {
         commonHandlers.login(properties.userEmail, properties.userPassword);
         mainPage.getUserNameHeader().click();
-//        commonHandlers.takeAndSaveScreenshot(personalAccountPage.getAvatarAreaUserProfile(),
-//                "ExpectedDefaultAvatarScreenshot.png");
         commonHandlers.assertCompareScreenschotAndExpectedImage(personalAccountPage.getAvatarAreaUserProfile(),
                 "ExpectedDefaultAvatarScreenshot.png");
         commonHandlers.logout();
@@ -51,8 +48,6 @@ public class AvatarAndLogoTests {
     @Test
     public void assertDefaultAvatarInHeader() throws IOException, URISyntaxException {
         commonHandlers.login(properties.userEmail, properties.userPassword);
-//        commonHandlers.takeAndSaveScreenshot(mainPage.getAvatarAreaUserInHeaderProfile(),
-//                 "ExpectedDefaultAvatarInHeaderScreenshot.png");
         commonHandlers.assertCompareScreenschotAndExpectedImage(mainPage.getAvatarAreaUserInHeaderProfile(),
                 "ExpectedDefaultAvatarInHeaderScreenshot.png");
         commonHandlers.logout();
@@ -71,8 +66,6 @@ public class AvatarAndLogoTests {
         wait.until(ExpectedConditions.elementToBeClickable(personalAccountPage.getConfirmChooseFileForAvatarButton()));
         wait.until(ExpectedConditions.textToBePresentInElement(personalAccountPage.getChangeAvatarCropMessage(),
                 "Пожалуйста, выберите часть изображения, которую Вы хотите использовать в качестве аватара."));
-//      commonHandlers.takeAndSaveScreenshot(personalAccountPage.getAvatarAreaDialogWindow(),
-//                "ExpectedAvatarscreenshot.png");
         commonHandlers.assertCompareScreenschotAndExpectedImage(personalAccountPage.getAvatarAreaDialogWindow(),
                 "ExpectedAvatarscreenshot.png");
         personalAccountPage.getCloseChangeAvatarButton().click();
@@ -93,8 +86,6 @@ public class AvatarAndLogoTests {
         wait.until(ExpectedConditions.elementToBeClickable(personalAccountPage.getConfirmChooseFileForAvatarButton()));
         wait.until(ExpectedConditions.textToBePresentInElement(personalAccountPage.getChangeAvatarCropMessage(),
                 "Пожалуйста, выберите часть изображения, которую Вы хотите использовать в качестве аватара."));
-//        commonHandlers.takeAndSaveScreenshot(personalAccountPage.getAvatarAreaDialogWindow(),
-//                "ExpectedAvatarScreenshotFromDesktop.png");
         commonHandlers.assertCompareScreenschotAndExpectedImage(personalAccountPage.getAvatarAreaDialogWindow(),
                 "ExpectedAvatarScreenshotFromDesktop.png");
         personalAccountPage.getCloseChangeAvatarButton().click();
@@ -125,14 +116,12 @@ public class AvatarAndLogoTests {
 
     @Test
     public void assertLogo() throws IOException, URISyntaxException {
-//        commonHandlers.takeAndSaveScreenshot(mainPage.getLogoHeader(),"ExpectedLogoHeader.png");
         commonHandlers.assertCompareScreenschotAndExpectedImage(mainPage.getLogoHeader(),
                "ExpectedLogoHeader.png");
     }
 
     @Test
     public void assertCampsImage() throws IOException, URISyntaxException {
-//        commonHandlers.takeAndSaveScreenshot(mainPage.getImageForCampsButton(),"ExpectedImageCampsButton.png");
         commonHandlers.assertCompareScreenschotAndExpectedImage(mainPage.getImageForCampsButton(),
                 "ExpectedImageCampsButton.png");
     }

@@ -16,7 +16,7 @@ import java.net.URISyntaxException;
 import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class LoadHomePageTest {
+class LoadHomePageTests {
     private final PropertiesLoader properties = new PropertiesLoader();
     private static final WebDriver driver = new ChromeDriver();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

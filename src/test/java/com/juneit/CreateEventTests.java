@@ -9,10 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
-
-import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CreateEventTests {
@@ -22,8 +19,6 @@ public class CreateEventTests {
     MainPage mainPage = new MainPage(driver);
     EventsPage eventsPage = new EventsPage(driver);
     CreateGameOptionsPage createGameOptionsPage = new CreateGameOptionsPage(driver);
-    PersonalAccountPage personalAccountPage  = new PersonalAccountPage(driver);
-    LoginWindow loginWindow = new LoginWindow(driver);
     JavascriptExecutor js = (JavascriptExecutor) driver;
     CommonHandlers commonHandlers = new CommonHandlers(driver);
 

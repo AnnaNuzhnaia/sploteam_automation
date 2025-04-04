@@ -6,14 +6,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Year;
 import java.time.format.DateTimeFormatter;
-
-import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TimeAndCalendarTests {
