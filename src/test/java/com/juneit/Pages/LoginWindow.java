@@ -10,6 +10,8 @@ public class LoginWindow {
     public static final String INPUT_EMAIL_LOGIN_CSS_LOCATOR = "input[type='email']";
     public static final String INPUT_PASSWORD_LOGIN_NAME = "password";
     public static final String SIGNIN_DIOLOGUE_WINDOW_BUTTON_XPATH = "/html/body/div[3]/div/div/div/div[2]/form/button";
+    public static final String WRONG_LOGIN_ERROR_CLASS = "form_error__2xL0z";
+
 
     private WebDriver driver;
     public LoginWindow(WebDriver driver) {
@@ -27,5 +29,11 @@ public class LoginWindow {
     public WebElement getSignInWindowButton(){
         return driver.findElement(By.xpath(SIGNIN_DIOLOGUE_WINDOW_BUTTON_XPATH));
     }
+
+    public String getTextMessageWrongLogin(){
+        return driver.findElement(By.className(WRONG_LOGIN_ERROR_CLASS)).getText();
+    }
+
+
 
 }
