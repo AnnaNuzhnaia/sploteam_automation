@@ -34,6 +34,11 @@ public class LoginWindow {
         return driver.findElement(By.className(WRONG_LOGIN_ERROR_CLASS)).getText();
     }
 
+   public String validationMessage() {
+        return getInputEmailLogin().getAttribute("validationMessage");
+   }
+
+
 
 
 }

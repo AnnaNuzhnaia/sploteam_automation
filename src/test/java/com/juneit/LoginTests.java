@@ -2,14 +2,10 @@ package com.juneit;
 
 import com.juneit.Pages.LoginWindow;
 import com.juneit.Pages.MainPage;
-import com.juneit.Pages.PersonalAccountPage;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -85,6 +81,15 @@ class LoginTests {
         commonHandlers.login(properties.userEmail, "short");
         assertEquals("Неверное значение",
                 loginWindow.getTextMessageWrongLogin());
+        assertTrue(mainPage.getSignInButton().isDisplayed());
+    }
+
+    @Test
+    public void assertWrongEmailWithoutAtLogin () {
+        assertTrue(mainPage.getSignInButton().isDisplayed());
+        commonHandlers.login("withoutatgmail.com", properties.userPassword);
+        assertEquals("Адрес электронной почты должен содержать символ \"@\". В адресе \"withoutatgmail.com\" отсутствует символ \"@\".",
+                loginWindow.validationMessage());
         assertTrue(mainPage.getSignInButton().isDisplayed());
     }
 }
