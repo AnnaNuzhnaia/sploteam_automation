@@ -9,6 +9,10 @@ import java.util.List;
 
 public class PersonalAccountPage {
 
+    public static final String PROFILE_CARD_NAME_CLASS = "ProfileCard_name__2yGm-";
+    public static final String PROFILE_CARD_EMAIL_XPATH = "//*[@id=\"root\"]/div[2]/div/div[3]/div[2]/div/div/div[2]/div[3]/span[2]";
+    public static final String PROFILE_CARD_EDIT_BUTTON_CLASS = "OrangeLink_orangeLink__34ZRK";
+    public static final String PROFILE_CARD_DEPOSIT_PAYMENT_BUTTON_CLASS = "ProfileCard_depositPayment__1R088";
     public static final String LOGOUT_BUTTON_CLASS = "LKLayout_exit__1QjSv";
     public static final String MY_GAMES_XPATH = "//*[@id=\"root\"]/div[2]/div/div[3]/div[1]/div/div[2]";
     public static final String PROFILE_CARD_PERSONAL_ACCOUNT_TEXT_XPATH =
@@ -43,6 +47,26 @@ public class PersonalAccountPage {
     public static final String LOADER_WRAPPER_CLASS = "Loader_wrapper__YL9BV";
 
     private WebDriver driver;
+
+    public String getNameProfileCardText(){
+        String nameProfileCardText = driver.findElement(By.className(PROFILE_CARD_NAME_CLASS)).getText();
+        return nameProfileCardText;
+    }
+
+    public String getEmailProfileCardText(){
+        String emailProfileCardText = driver.findElement(By.xpath(PROFILE_CARD_EMAIL_XPATH)).getText();
+        return emailProfileCardText;
+    }
+
+    public WebElement getEditButton(){
+        WebElement editButton = driver.findElement(By.className(PROFILE_CARD_EDIT_BUTTON_CLASS));
+        return editButton;
+    }
+
+    public WebElement getDepositPaymentButton(){
+        WebElement depositPaymentButton = driver.findElement(By.className(PROFILE_CARD_DEPOSIT_PAYMENT_BUTTON_CLASS));
+        return depositPaymentButton;
+    }
 
     public List<WebElement> getNotificationPages(){
         List<WebElement> notificationPages = driver.findElements(By.className(NOTIFICATION_PAGES_CLASS));
